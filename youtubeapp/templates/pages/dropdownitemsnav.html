@@ -1,0 +1,46 @@
+{% load static %}
+<div class="droplogo">
+  <div class="div-loginitem">
+    <div class="droploginflex">
+       
+        {% if user.is_authenticated %}
+        
+        {% if  user.profile %}
+        <img src="{{ user.profile.url }}" alt="">
+        {% endif %}
+          
+      <h1> {{ user.username }}</h1>
+  {% else %}
+  <img src="{% static 'user/img1.jpg' %}" alt="">
+  <h1>Your channel</h1>
+  {% endif %}
+        
+       </div>
+       <a href="">Manage your Google Account</a>
+  </div>
+  <ul class="dropdownulitems">
+    <li><a href=""><i class="fa-regular fa-user"></i>
+      {% if user.is_authenticated %}
+       {{ user.username }}
+  {% else %}
+      
+  {% endif %}
+    </a></li>
+
+    <li><a href=""><i class="fa-brands fa-square-youtube"></i>Youtube Studio</a></li>
+
+    <li><a href=""><i class="fa-solid fa-user"></i>Switch Account</a></li>
+    <li><a href="{% url 'loginapp:logoutuser' %}"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+    <li><a href="">
+        <i class="fa-solid fa-dollar-sign"></i> Purchases and Membership
+    </a></li>
+
+    <li><a href=""><i class="fa-brands fa-nfc-directional"></i> Your data in Youtube</a></li>
+
+    <li><a href=""><i class="fa-solid fa-moon"></i>Apperance divice theme</a></li>
+
+    <li><a href=""><i class="fa-solid fa-location-crosshairs"></i>Location:Ghana</a></li>
+
+    <li><a href=""><i class="fa-solid fa-gear"></i> Settings</a></li>
+  </ul>
+</div>

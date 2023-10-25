@@ -1,0 +1,277 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+    /* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
+position: relative;
+}
+h1,h2,h3,h4,h5,h6,p{
+    font-family: 'Poppins', sans-serif;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.logoli a img{
+    width: 30px;
+    height: 30px;
+}
+.logo button{
+    border: none;
+    background-color: #F0F0F0;
+    padding: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.logo button i{
+    font-size: 20px;
+}
+.usernav{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+header{
+  width: 95vw;
+  margin: 0px auto;
+  padding: 10px;
+  position: relative;
+ height: fit-content !important;
+ background-color: white !important;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 90vw;
+    margin: 0px auto;
+    z-index: 99;
+    background-color: white;
+    height: fit-content;
+    width: 100%;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logoli{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.centernav{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+    position: relative;
+}
+
+.centernav form{
+    flex-basis: 90%;
+    display: flex;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 50px !important;
+    padding: 5px;
+   
+}
+.centernav form input{
+   width: 90%;
+   padding: 15px;
+   border-radius: 50px !important;
+   outline: none;
+   border: 1px solid #F0F0F0;;
+}
+.centernav form button{
+    padding: 8px;
+    border: none;
+
+}
+.centernav form button i{
+    font-size: 20px;
+}
+.mic{
+    border: none;
+    background-color: #F0F0F0;
+    padding: 10px;
+    border-radius: 100%;
+}
+.mic a i{
+    font-size: 20px;
+}
+.closesearch{
+    border: none;
+    background-color: #F0F0F0;
+    padding: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.closesearch i{
+    font-size: 20px;
+}
+.rightnav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.rightnav li{
+    padding: 10px;
+    border-radius: 100%;
+}
+.rightnav li a i{
+    font-size: 20px;
+}
+.showsearch{
+    display: none;
+    border: none;
+    border-radius: 100%;
+    padding: 10px;
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+.showsearch i{
+    font-size: 20px;
+}
+.closesearch{
+    display: none;
+}
+
+
+/* createvideo */
+.createvideo{
+    position: relative;
+}
+
+
+
+.createul{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: white !important;
+    padding: 10px;
+    z-index: 99;
+    display: none;
+    flex-direction: column;
+    width: 150px;
+    height: max-content;
+    border-radius: 10px;
+}
+.openlive{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: max-content;
+}
+
+.createul li {
+    width: 150px;
+    margin: auto;
+    padding: 5px;
+}
+.createul li:hover{
+    background-color: #F0F0F0;
+    border-radius: 8px;
+}
+.createul li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+}
+
+
+.logoutdive{
+    position: fixed;
+    top: 70px;
+    z-index: 99;
+    right: 20px;
+    display: none !important;
+}
+.dropdownlogout{
+    display: block !important;
+}
+/* dropdwon */
+.logoutdive{
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 7px 0px 30px -20px;
+    max-height: 100vh;
+    overflow: scroll;
+}
+.droplogo{
+    display: flex;
+    flex-direction: column;
+}
+.div-loginitem{
+    border-bottom: 2px solid gray;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+}
+.div-loginitem .droploginflex{
+    display: flex;
+    gap: 10px;
+}
+.div-loginitem .droploginflex img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.droploginflex h1{
+    font-size: 15px;
+}
+.dropdownulitems li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    margin-bottom: 20px!important;
+}
+.dropdownulitems li a i{
+    font-size: 24px;
+}
+
+
+
+
+@media(max-width:900px){
+    .showsearch{
+        display: block;
+    }
+    .closesearch{
+        display: block;
+    }
+    .mobileshowsearch{
+        display: block !important;
+        width: 90vw;
+    }
+
+    .centernav{
+        display: none;
+        position: absolute;
+        width: 90%;
+        margin: 0px auto;
+        left: 0;
+        right: 0;
+        top: 8px;
+        bottom: 0;
+    }
+    
+  
+   
+}

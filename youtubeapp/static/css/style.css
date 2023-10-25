@@ -1,0 +1,262 @@
+body,html{
+    overflow-x: hidden !important;
+}
+.container{
+    margin-top: 50px;
+}
+
+.container-content{
+    display: flex;
+    gap: 20px;
+   
+}
+.sidebardiv{
+    flex-basis: 10%;
+    padding: 0px;
+}
+
+.maindiv{
+    flex-basis: 80%;
+}
+.sidebarul li{
+    margin: 0px 0px;
+    padding: 8px;
+}
+.sidebarul li a i{
+    font-size: 24px;
+    padding: 8px 0px;
+}
+.sidebarul li a{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* videos */
+.main-contentdivs-videos{
+    margin-top: 40px;
+}
+
+.videos-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+.videos-items a{
+    color: inherit;
+}
+.videos-items video{
+    width: 300px !important;
+    height: 180px !important;
+    border-radius: 8px;
+    box-shadow: 0px 7px 30px -20px;
+}
+.videos-items{
+    width: 300px !important;
+}
+.videos-infor-content{
+    display: flex;
+    flex-direction: column;
+}
+.video-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.videos-items .video-info .videoname h1{
+    margin: 0px !important;
+    font-size: 16px;
+}
+
+.user img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.videos-date{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+}
+.videos-date button{
+    border: none;
+   padding: 10px;
+    background-color: transparent;
+}
+
+/*  details*
+/
+/*  */
+.videodetailsdiv{
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+.videodetailsdiv video{
+    max-width: 700px;
+    max-height: 700px;
+}
+.videodetals-name h1{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+.share-likes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.subscribe a{
+    background-color: black;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+.share a{
+    background-color: #F0F0F0;
+    border-radius: 8px;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+}
+.like{
+    background-color: #F0F0F0;
+    border-radius: 8px;
+    padding: 8px;
+}
+.like a{
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+}
+
+.download a{
+    background-color: #F0F0F0;
+    border-radius: 8px;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* comment */
+.comment{
+    border-bottom: 1px solid rebeccapurple;
+}
+.mycommentdiv{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+.commentsection{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.commentsection form{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.commentsection form .user{
+    flex-basis: 10%;
+}
+.commentsection form .inputdiv{
+    display: flex;
+    align-items: center;
+    flex-basis: 80%;
+    background-color: #F0F0F0;
+    border-radius: 8px;
+    padding: 5px;
+}
+.commentsection form .inputdiv input{
+    width: 90%;
+    padding: 8px;
+    border-radius: 8px;
+    border-top: 0px!important;
+    border-right: 0px;
+    border-left: 0px;
+    outline: none;
+}
+.commentsection form .inputdiv button{
+    width: 10%;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    border-radius: 8px;
+}
+.inputdiv i{
+    font-size: 24px;
+}
+.postcomment{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.replytext{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0px;
+}
+.reply{
+    display: none;
+}
+
+
+
+.showbtn{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.showbtn button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* the end */
+/* 
+.mycomment-reply{
+    position: absolute;
+    top: 0; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+     overflow: scroll;  
+    width: 100% !important;
+    background-color: white;
+}
+.replypost{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+   
+}
+.readcomment button{
+    bottom: none;
+    background-color: transparent;
+}
+.showcomment{
+    display: flex !important;
+}
+
+.repliedtouser{
+    font-size: 16px;
+} */
+
+
+

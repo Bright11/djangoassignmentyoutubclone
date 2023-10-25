@@ -1,0 +1,107 @@
+{% extends 'layouts/based.html' %}
+{% block title %}{{ title }}{% endblock  %}
+
+
+{% block content %}
+{% load static %}
+<div class="container">
+  <div class="container-content">
+    <div class="sidebardiv">
+        {% include 'layouts/sidebar.html' %}
+       </div>
+    
+       <div class="maindiv">
+
+        <div class="navslider">
+            <div class="topslidercategory">
+              <div class="owl-carousel categoryslider">
+                 <a href="" class="slider-link"> <div class="slider-items">Nigeria</div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Ghana </div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Uk</div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Programming </div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Python </div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Django </div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Laravel </div></a>
+                </div>
+          </div>
+          </div>
+          {% comment %} end slide {% endcomment %}
+          
+
+          {% comment %} logout content {% endcomment %}
+          <div class="logoutdive">
+           {% include 'pages/dropdownitemsnav.html' %}
+          </div>
+          {% comment %} the end {% endcomment %}
+
+
+      {% comment %}  {% endcomment %}
+          <div class="main-contentdivs-videos">    
+        <div class="videos-container">
+            {% if video %}
+                
+                {% for v in video %}
+                <div class="videos-items">
+                    <a href="{% url 'youtubeapp:watch' v.slug %}">
+                      <video controls>
+                          <source src="{{ v.video.url }}">
+                        </video>
+                       <div class="videos-infor-content">
+                        <div class="video-info">
+                            <div class="user">
+                                <img src="{{ v.user.profile.url }}" alt="">
+                            </div>
+                           <div class="videoname">
+                            <h1>{{v.title|stringformat:".80s"}}</h1>
+                           </div>
+                        </div>
+                        <div class="videos-date">
+                            <button>{{v.user.username}}</button>
+                            <button>
+                                {{ v.created_at }}
+                            </button>
+                        </div>
+                       </div>
+                    </a>
+                  </div>
+                {% endfor %}
+                    
+                {%else%}
+                <h1>No avialable video</h1>
+            {% endif %}
+                
+         
+
+
+            
+        </div>
+      </div>
+       </div>
+  </div>
+
+</div>
+{% endblock  %}
+
+
+
+
+{% comment %}  <div class="share-likes">
+                        <div class="user">
+                            <img src="{% static 'user/img1.jpg' %}" alt="">
+                        </div>
+                        <div class="subscribe">
+                            <button><i class="fa-regular fa-bell"></i></button>
+                        </div>
+                        <div class="like">
+                            <button><i class="fa-solid fa-thumbs-up"></i></button>
+                            <button><i class="fa-regular fa-thumbs-down"></i></button>
+                        </div>
+                        <div class="share">
+                            <button>
+                                <i class="fa-solid fa-share"></i>
+                            </button>
+                        </div>
+                        <div class="download">
+                            <button><i class="fa-solid fa-arrow-down"></i></button>
+                        </div>
+                    </div> {% endcomment %}

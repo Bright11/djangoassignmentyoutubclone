@@ -1,0 +1,61 @@
+{% extends 'layouts/based.html' %} 
+
+{% block content %}
+<div class="container-login">
+<div class="login">
+    {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+ 
+{% comment %} register {% endcomment %}
+<form action="" class="registerform" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ registerform }}
+    <input type="text" name="registernow" value="register" hidden>
+    <button>Register</button>
+    
+    {% if registerform.errors or form.non_field_errors %}
+        <div class="error">
+            
+            {% for field in registerform  %}
+            <span>{{field.errors}}</span>
+                
+            {% endfor %}
+            {{ registerform.non.field_errors }}
+                
+        </div>
+    {% endif %}
+    <button onclick="loginuser()"  type="button">Already have an account Login</button>
+ </form>
+
+{% comment %}  {% endcomment %}
+{% comment %} login {% endcomment %}
+<form class="loginform" action="" method="post">
+    {% csrf_token %}
+    {{ loginform }}
+<input type="text" name="loginnow" hidden value="login">
+    <button>Login</button>
+    
+    {% if loginform.errors or form.non_field_errors %}
+        <div class="error">
+            
+            {% for field in loginform  %}
+            <span>{{field.errors}}</span>
+                
+            {% endfor %}
+            {{ loginform.non.field_errors }}
+                
+        </div>
+    {% endif %}
+    <button onclick="loginuser()" type="button">don't have an account? Register</button>
+ </form>
+
+{% comment %}  {% endcomment %}
+</div>
+</div>
+{% endblock  %}

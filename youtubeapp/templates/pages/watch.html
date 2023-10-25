@@ -1,0 +1,179 @@
+{% extends 'layouts/based.html' %}
+{% block title %}{{video.title}}{% endblock  %}
+
+
+{% block content %}
+{% load static %}
+<div class="container">
+  <div class="container-content">
+    <div class="sidebardiv">
+        {% include 'layouts/sidebar.html' %}
+       </div>
+    
+       <div class="maindiv">
+
+        <div class="navslider">
+            <div class="topslidercategory">
+              <div class="owl-carousel categoryslider">
+                 <a href="" class="slider-link"> <div class="slider-items">Nigeria</div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Ghana </div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Uk</div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Programming </div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Python </div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Django </div></a>
+                 <a href="" class="slider-link"> <div class="slider-items">Laravel </div></a>
+                </div>
+          </div>
+          </div>
+          {% comment %} end slide {% endcomment %}
+          
+
+          {% comment %} logout content {% endcomment %}
+          <div class="logoutdive">
+           {% include 'pages/dropdownitemsnav.html' %}
+          </div>
+          {% comment %} the end {% endcomment %}
+
+
+      {% comment %}  {% endcomment %}
+          <div class="main-contentdivs-videos">    
+        <div class="videos-container">
+           <div class="videodetailsdiv">
+            <video controls>
+                <source src="{{ video.video.url }}">
+            </video>
+            <div class="videodetals-name">
+                <h1>{{video.title}}</h1>
+            </div>
+            <div class="share-likes">
+                <div class="user">
+                    <img src="{{ video.user.profile.url }}" alt="">
+                </div>
+                <div class="subscribe">
+                   <a href="">Subscribe</a>
+                </div>
+                <div class="like">
+                  
+                  {% if likes %}
+                  <a href="#" style="background: blue;"><i class="fa-solid fa-thumbs-up"></i></a>
+                  {% else %}
+                  <a href="{% url 'youtubeapp:likesvideo' video.slug %}"><i class="fa-solid fa-thumbs-up"></i></a>
+                 
+                  {% endif %}
+                    
+                    <a href=""><i class="fa-regular fa-thumbs-down"></i></a>
+                </div>
+                <div class="share">
+                    <a href=""><i class="fa-solid fa-share"></i>Share</a>
+                </div>
+                <div class="download">
+                    <a href=""><i class="fa-solid fa-arrow-down"></i>download</a>
+                </div>
+            </div> 
+            <p>{{video.description}}</p>
+
+            <div class="commentsection">
+                
+                {% if user.is_authenticated %}
+                <form method="post" action="{% url 'youtubeapp:likesvideo' video.slug %}">
+                    {% csrf_token %}
+                    <div class="user">
+                        <img src="{{ user.profile.url }}" alt="">
+                    </div>
+                    <div class="inputdiv">
+                        <input name="comment" type="text" placeholder="Comment">
+                        <button type="submit"><i class="fa-brands fa-google-play"></i></button>
+                    </div>
+                </form>
+                {% endif %}
+
+                
+                {% if comment %}
+
+               
+                {% for c in comment  %}
+                <div class="comment">
+                   <div class="mycommentdiv">
+                    <div class="user">
+                        <img src="{{ c.user_id.profile.url }}" alt="">
+                    </div>
+                    <div class="commenttext">
+                        <p class="comment-text">{{ c.comment }}</p>
+                    </div>
+                   </div>
+                   <div class="showbtn">
+                    <button class="toggle-reply">Show Reply</button>
+                   </div>
+                    <div class="reply">
+                        <form action="{% url 'youtubeapp:reply' c.id %}" method="post">
+                            {% csrf_token %}
+                            <div class="user">
+                                <img src="{{ user.profile.url }}" alt="">
+                            </div>
+                            <div class="inputdiv">
+                                {{ replyform }}
+                                <button type="submit">Reply</button>
+        
+                            </div>
+                         
+                        </form>
+                    {% for r in c.commentid.all %}
+                   
+                    <div class="replytext">
+                        <div class="user">
+                            <img src="{{ r.usersid.profile.url }}" alt="">
+                        </div>
+                        <p class="reply-text">{{r.reply}}</p>
+                    </div>
+                      
+                    {% endfor %}
+                
+                </div>
+                   
+                  </div>
+               {% endfor %}
+                
+                    
+                
+                {% endif %}
+                    
+               
+
+
+           
+               </div>
+           </div>
+
+           
+            
+        </div>
+      </div>
+       </div>
+  </div>
+
+</div>
+{% endblock  %}
+
+
+
+
+{% comment %}  <div class="share-likes">
+                        <div class="user">
+                            <img src="{% static 'user/img1.jpg' %}" alt="">
+                        </div>
+                        <div class="subscribe">
+                            <button><i class="fa-regular fa-bell"></i></button>
+                        </div>
+                        <div class="like">
+                            <button><i class="fa-solid fa-thumbs-up"></i></button>
+                            <button><i class="fa-regular fa-thumbs-down"></i></button>
+                        </div>
+                        <div class="share">
+                            <button>
+                                <i class="fa-solid fa-share"></i>
+                            </button>
+                        </div>
+                        <div class="download">
+                            <button><i class="fa-solid fa-arrow-down"></i></button>
+                        </div>
+                    </div> {% endcomment %}

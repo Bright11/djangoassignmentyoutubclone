@@ -1,0 +1,65 @@
+{% load static %}
+<header>
+    <nav class="nav">
+       <div class="logo">
+     <button onclick="hidesidebarname()">
+        <i class="fa-solid fa-bars"></i>
+     </button>
+        <li class="logoli"><a href="{% url 'youtubeapp:index' %}"><img src="{% static 'logo/youtub.jpg' %} " alt="logo"></a>
+        <p>youtube</p>
+        </li>
+       </div>
+        <ul class="centernav" id="centernav">
+    
+            <form action="">
+              <button type="button" class="closesearch" onclick="shownavmobile()"><i class="fa-solid fa-arrow-left"></i></button>
+                <input type="text" placeholder="Search">
+                <button type="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+           
+         
+        </ul>
+        <button onclick="shownavmobile()" class="showsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <ul  class="rightnav">
+          <div>
+            <button class="mic"><a href="#"><i class="fa-solid fa-microphone"></i></button>
+          </div>
+                <li onclick="golivedrop()" class="createvideo" ><i class="fa-solid fa-video"></i>
+                <ul class="createul">
+                  <li>
+                    <a href="{% url 'youtubeapp:upload'%}">
+                      <i class="fa-solid fa-video"></i>
+                      Upload Video
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i class="fa-solid fa-tower-broadcast"></i>
+                     Go Live
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i class="fa-solid fa-pencil"></i>
+                    Create
+                    </a>
+                  </li>
+                </ul>
+                </li>
+            <li><a href="/"><i class="fa-solid fa-bell"></i></a></li>
+           
+            {% if user.is_authenticated %}
+           <li onclick="showlogout()"><a href="#"><img class="usernav" src="{{ user.profile.url }}" alt=""></a></li>
+           {% else %}
+           <li><a href="{% url 'loginapp:register' %}">Login</a></li>
+           {% endif %}
+            
+            
+        </ul>
+    </nav>
+
+   
+</header>
+
+
+

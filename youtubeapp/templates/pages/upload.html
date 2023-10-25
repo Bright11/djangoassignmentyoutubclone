@@ -1,0 +1,38 @@
+{% extends 'layouts/based.html' %} 
+
+{% block content %}
+<div class="container-login">
+<div class="login">
+    {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+ 
+{% comment %} register {% endcomment %}
+<form action=""  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ videoform }}
+    <button>Create</button>
+    
+    {% if videoform.errors or form.non_field_errors %}
+        <div class="error">
+            
+            {% for field in videoform  %}
+            <span>{{field.errors}}</span>
+                
+            {% endfor %}
+            {{ videoform.non.field_errors }}
+                
+        </div>
+    {% endif %}
+    
+ </form>
+
+
+</div>
+</div>
+{% endblock  %}
